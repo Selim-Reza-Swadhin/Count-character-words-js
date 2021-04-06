@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Words Count</title>
+</head>
+<body>
+<textarea onkeyup="countWords(this);" placeholder="Enter Some Text"></textarea>
+<br />
+<span id="words-counter"></span>
+<br />
+
+<div id="wrapper">
+ <textarea id="text" onkeyup="count();" placeholder="Enter Some Text"></textarea>
+ <p id="total">Total Characters:0</p>
+</div>
+
+<script>
+
+
+function count()
+{
+  var total = document.getElementById("text").value;
+	  total = total.replace(/\s/g, '');
+      document.getElementById("total").innerHTML = "Total Characterss:"+total.length;
+}
+
+
+
+ function countWords(self) {
+ var spaces = self.value.match(/\S+/g);
+ var words = spaces ? spaces.length : 0;
+ 
+ document.getElementById("words-counter").innerHTML = words + " words";
+ } 
+</script>
+</body>
+</html>
